@@ -1,3 +1,4 @@
+package retineurali.neurone;
 //SINGOLA UNITA' DI ELABORAZIONE DELLA RETE NEURALE
 
 
