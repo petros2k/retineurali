@@ -54,7 +54,7 @@ public class SingleNeuronPerceptron {
 	private void computeAllOutputs() {
 
 		for(int count=0; count<numberOfPatterns; count++){
-			perceptronOutputs[count] = outputNeuron.fireNeurons("sgn", patterns.getInputPatterns(count), weightMatrix.getWeights(), bias);
+			perceptronOutputs[count] = outputNeuron.fireNeurons("sgn", patterns.getInputPatterns(count), weightMatrix.getWeightMatrix(), bias);
 		}
 
 	}
@@ -72,7 +72,7 @@ public class SingleNeuronPerceptron {
 
 	private double computeOutput(int patternIndex) {
 
-		return outputNeuron.fireNeurons("sgn", patterns.getInputPatterns(patternIndex), weightMatrix.getWeights(), bias);
+		return outputNeuron.fireNeurons("sgn", patterns.getInputPatterns(patternIndex), weightMatrix.getWeightMatrix(), bias);
 	}
 
 	private void presentOnePattern(int patternCount){
@@ -115,7 +115,7 @@ public class SingleNeuronPerceptron {
 	
 	public double recall(double[] inputs){
 		
-		return outputNeuron.fireNeurons("sgn", inputs, weightMatrix.getWeights(), bias);
+		return outputNeuron.fireNeurons("sgn", inputs, weightMatrix.getWeightMatrix(), bias);
 	}
 	
 	//METODI SET-GET

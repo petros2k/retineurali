@@ -51,11 +51,11 @@ public class ConnectionMatrix {
 		}
 	}
 
-	public double[] getWeights() {
+	public double[] getWeightMatrix() {
 		return weights;
 	}
 
-	public int getSize() {
+	public int getMatrixSize() {
 		return size;
 	}
 	
