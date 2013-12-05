@@ -1,4 +1,4 @@
-package retineurali.neurone;
+package retineurali.tlu;
 //SINGOLA UNITA' DI ELABORAZIONE DELLA RETE NEURALE
 
 
@@ -62,7 +62,7 @@ public class ThresholdLogicUnit {
 			calculateSigmoidActivation();
 		else if(type.equalsIgnoreCase("gaussian"))
 			calculateGaussianoActivation();
-		else
+		else if(type.equalsIgnoreCase("sgn"))
 			calculateSgnActivation();
 		
 		return activation;

@@ -19,12 +19,17 @@ public class PatternMatrix {
  		this.numberOfPatterns = numberOfPatterns;
  		inputPatterns = new double[this.numberOfPatterns][this.inputPatternLength];
  		outputPatterns = new double[this.numberOfPatterns][this.outputPatternLength];
- 		
+ 		readFile(patternFile);
  	}
  	
- 	public PatternMatrix(int inputPattarenLength, int outputPatternLength, int numberOfPatterns) throws FileNotFoundException{
- 		
- 		
+ 	public PatternMatrix(double[][] in, double[][] out) throws FileNotFoundException{
+ 		this.inputPatternLength = in[0].length;
+ 		this.outputPatternLength = out[0].length;
+ 		this.numberOfPatterns = in.length;
+ 		inputPatterns = new double[this.numberOfPatterns][this.inputPatternLength];
+ 		outputPatterns = new double[this.numberOfPatterns][this.outputPatternLength];
+ 		inputPatterns = in;
+ 		outputPatterns = out;		
  	}
  	
  	public void readFile(File patternFile) throws FileNotFoundException{
@@ -46,7 +51,7 @@ public class PatternMatrix {
  			for(int countInput=0; countInput<inputPatternLength; countInput++)
  				inputPatterns[i][countInput] = Double.parseDouble(inputTokenizer.nextToken());
  			for(int countOutput=0; countOutput<outputPatternLength; countOutput++)
- 				outputPatterns[i][countOutput] = Double.parseDouble(inputTokenizer.nextToken());
+ 				outputPatterns[i][countOutput] = Double.parseDouble(outputTokenizer.nextToken());
  			
  		}
  	}
