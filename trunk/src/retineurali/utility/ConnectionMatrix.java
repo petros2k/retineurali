@@ -2,6 +2,11 @@ package retineurali.utility;
 
 import java.util.Random;
 
+
+/*
+ * CLASSE PER LA GESTIONE DELLA MATRICE DEI PESI E AGGIORNAMENTO DI QUESTI ULTIMI
+ */
+
 public class ConnectionMatrix {
 
 	private double[] weights;
@@ -12,6 +17,7 @@ public class ConnectionMatrix {
 		this.size = size;
 	}
 
+	//INIZIALIZZA I PESI IN MANIERA RANDOM
 	public void initialiteRandomWeights(){
 		Random generator = new Random();
 
@@ -20,6 +26,7 @@ public class ConnectionMatrix {
 		}
 	}
 
+	//INIZIALIZZA I PESI CON UN SET INIZIALE DI VALORI
 	public void initialiteWeights(double[] weights){
 		this.weights = weights;
 
@@ -30,6 +37,8 @@ public class ConnectionMatrix {
 		weights[element] += deltaWeight;
 	}
 
+	
+	//CAMBIA LA DIMENSIONE DELLA MATRICE DEI PESI
 	public void changeMatrixSize(int newSize){
 		double[] tmpWeights = new double[newSize];
 		//ESTENDERE LA MATRICE DEI PESI
@@ -41,7 +50,7 @@ public class ConnectionMatrix {
 				weights[count] = tmpWeights[count];
 			}
 			size = newSize;
-		//RIMPICCIOLIRE LA MATRICE DEI PESI
+			//RIMPICCIOLIRE LA MATRICE DEI PESI
 		}else if(newSize < size){
 			for(int count=0; count < newSize; count++){
 				tmpWeights[count] = weights[count];
@@ -51,6 +60,8 @@ public class ConnectionMatrix {
 		}
 	}
 
+	
+	//METODI SET-GET
 	public double[] getWeightMatrix() {
 		return weights;
 	}
@@ -58,7 +69,7 @@ public class ConnectionMatrix {
 	public int getMatrixSize() {
 		return size;
 	}
-	
+
 	public double getWeightAt(int element){
 		return weights[element];
 	}

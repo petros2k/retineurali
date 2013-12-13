@@ -7,10 +7,13 @@ import retineurali.patterns.PatternMatrix;
 import retineurali.tlu.ThresholdLogicUnit;
 import retineurali.utility.ConnectionMatrix;
 
+/*
+ * CLASSE MODELLO NEURONE
+ */
+
 public class SingleNeuronPerceptron {
 
 	private ConnectionMatrix weightMatrix;
-	
 	private ThresholdLogicUnit outputNeuron;
 	private PatternMatrix patterns;
 	double bias;
@@ -36,6 +39,7 @@ public class SingleNeuronPerceptron {
 
 
 	private void initialize(String patternFile, int numberOfInputs,int numberOfPatterns, int epochLimit, double errorLimit,double learningConstant) throws FileNotFoundException {
+		
 		outputNeuron = new ThresholdLogicUnit();
 		patterns = new PatternMatrix(new File(patternFile), numberOfInputs, 1, numberOfPatterns);
 		bias = Math.random() *2 -1;
@@ -94,7 +98,7 @@ public class SingleNeuronPerceptron {
 		for(int patternCount = 0; patternCount < numberOfPatterns; patternCount++){
 			presentOnePattern(patternCount);
 		}
-		computeError();
+		computeError(); 
 		computeAllOutputs();
 		epochCount++;
 	}

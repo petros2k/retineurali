@@ -5,6 +5,10 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+/*
+ * CLASSE PER LA GESTIONE DEI PATTERN DI INPUT
+ */
+
 public class PatternMatrix {
 
 	private double[][] inputPatterns;
@@ -13,13 +17,18 @@ public class PatternMatrix {
  	private int outputPatternLength;
  	private int numberOfPatterns;
  	
+ 	//COSTRUTTORE DELLA CLASSE PATTERNMATRIX - 
+ 	//INPUTPATTERNLENGTH  - DIMENSIONE DELL'INPUT
+ 	//OUTPUTPATTERNLENGTH - DIMENSIONE DELL'OUTPUT
+ 	//NUMBEROFPATTERNS 	  - DIMENSIONE DELL'INSIEME DI INPUT 
  	public PatternMatrix(File patternFile, int inputPatternLength, int outputPatternLength, int numberOfPatterns) throws FileNotFoundException{
+ 		
  		this.inputPatternLength = inputPatternLength;
  		this.outputPatternLength = outputPatternLength;
  		this.numberOfPatterns = numberOfPatterns;
  		inputPatterns = new double[this.numberOfPatterns][this.inputPatternLength];
  		outputPatterns = new double[this.numberOfPatterns][this.outputPatternLength];
- 		readFile(patternFile);
+ 		readFile(patternFile); 
  	}
  	
  	public PatternMatrix(double[][] in, double[][] out) throws FileNotFoundException{
