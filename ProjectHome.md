@@ -1,0 +1,1 @@
+The project's aim is develop neural network java code with some learning method like descent gradient methods.
